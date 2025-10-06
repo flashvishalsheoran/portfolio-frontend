@@ -4,7 +4,6 @@ import './globals.css'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import FloatingQuoteButton from '@/components/FloatingQuoteButton'
-import ScrollToTop from '@/components/ScrollToTop'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -39,7 +38,6 @@ export default function RootLayout({
         </main>
         <Footer />
         <FloatingQuoteButton />
-        <ScrollToTop />
       </body>
     </html>
   )

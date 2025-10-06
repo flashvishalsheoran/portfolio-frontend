@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { FaQuoteLeft, FaTimes } from 'react-icons/fa'
+import { FaComments, FaTimes } from 'react-icons/fa'
 import Link from 'next/link'
 
 const FloatingQuoteButton = () => {
@@ -13,12 +13,12 @@ const FloatingQuoteButton = () => {
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="fixed bottom-8 right-8 w-16 h-16 bg-gradient-to-br from-primary-500 to-primary-700 text-white rounded-full shadow-2xl hover:shadow-3xl transform hover:scale-110 transition-all duration-300 flex items-center justify-center z-40 group"
-        aria-label="Request a Quote"
+        aria-label="Get Help"
       >
         {isOpen ? (
           <FaTimes className="text-2xl" />
         ) : (
-          <FaQuoteLeft className="text-2xl group-hover:rotate-12 transition-transform" />
+          <FaComments className="text-2xl group-hover:scale-110 transition-transform" />
         )}
       </button>
 
