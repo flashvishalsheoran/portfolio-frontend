@@ -2,9 +2,9 @@ import { MetadataRoute } from 'next'
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: 'MedStaff Logistics - Healthcare Solutions',
-    short_name: 'MedStaff',
-    description: 'Professional hospital logistics and staffing services',
+    name: 'SOA Healthcare - Logistics & Consulting',
+    short_name: 'SOA',
+    description: 'Professional healthcare logistics, staffing, and consulting services',
     start_url: '/',
     display: 'standalone',
     background_color: '#ffffff',

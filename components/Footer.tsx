@@ -14,15 +14,15 @@ const Footer = () => {
           <div className="space-y-4">
             <div className="flex items-center gap-3">
               <div className="w-12 h-12 bg-gradient-to-br from-primary-500 to-primary-700 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-xl">MS</span>
+                <span className="text-white font-bold text-xl">SOA</span>
               </div>
               <div>
-                <h3 className="text-xl font-bold">MedStaff Logistics</h3>
-                <p className="text-sm text-gray-400">Healthcare Solutions</p>
+                <h3 className="text-xl font-bold">SOA Healthcare</h3>
+                <p className="text-sm text-gray-400">Logistics & Consulting</p>
               </div>
             </div>
             <p className="text-gray-400 text-sm leading-relaxed">
-              Trusted partner in healthcare logistics and staffing, delivering excellence in medical supply chain management and professional healthcare staffing solutions.
+              Trusted partner in healthcare logistics, staffing, and consulting. Delivering excellence in medical coordination, professional development, and patient-centered healthcare solutions.
             </p>
             <div className="flex gap-3">
               <a href="#" className="w-10 h-10 bg-gray-700 hover:bg-primary-600 rounded-lg flex items-center justify-center transition-all transform hover:scale-110">
@@ -137,7 +137,7 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="mt-12 pt-8 border-t border-gray-700 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-gray-400 text-sm text-center md:text-left">
-            © {currentYear} MedStaff Logistics. All rights reserved.
+            © {currentYear} SOA Healthcare. All rights reserved.
           </p>
           <div className="flex gap-6 text-sm text-gray-400">
             <Link href="/privacy" className="hover:text-primary-400 transition-colors">

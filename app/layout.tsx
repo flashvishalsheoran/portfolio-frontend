@@ -8,16 +8,16 @@ import FloatingQuoteButton from '@/components/FloatingQuoteButton'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Healthcare Logistics & Staffing Solutions | MedStaff Logistics',
-  description: 'Professional hospital logistics and staffing services. We provide reliable healthcare staffing solutions and medical supply chain management.',
-  keywords: 'healthcare logistics, hospital staffing, medical staffing, healthcare supply chain, medical logistics',
-  authors: [{ name: 'MedStaff Logistics' }],
+  title: 'Healthcare Logistics & Consulting Solutions | SOA Healthcare',
+  description: 'Professional healthcare logistics, staffing, and consulting services. We provide comprehensive healthcare solutions including staffing liaison, travel coordination, and medical consulting.',
+  keywords: 'healthcare logistics, medical staffing, healthcare consulting, residency development, medical research, healthcare accessibility',
+  authors: [{ name: 'SOA Healthcare' }],
   openGraph: {
-    title: 'Healthcare Logistics & Staffing Solutions',
-    description: 'Professional hospital logistics and staffing services',
+    title: 'Healthcare Logistics & Consulting Solutions',
+    description: 'Professional healthcare logistics, staffing, and consulting services',
     type: 'website',
   },
-  metadataBase: new URL('https://www.medstafflogistics.com'),
+  metadataBase: new URL('https://www.soahealthcare.com'),
   robots: {
     index: true,
     follow: true,

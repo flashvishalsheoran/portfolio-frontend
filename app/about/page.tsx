@@ -3,8 +3,8 @@ import Image from 'next/image'
 import { FaAward, FaHandshake, FaLightbulb, FaHeart, FaUsers, FaGlobe, FaChartLine } from 'react-icons/fa'
 
 export const metadata = {
-  title: 'About Us | MedStaff Logistics',
-  description: 'Learn about our mission, values, and commitment to excellence in healthcare logistics and staffing.',
+  title: 'About Us | SOA Healthcare',
+  description: 'Learn about our mission, values, and commitment to excellence in healthcare logistics, staffing coordination, and professional consulting.',
 }
 
 export default function AboutPage() {
@@ -32,12 +32,12 @@ export default function AboutPage() {
   ]
 
   const milestones = [
-    { year: '2014', event: 'Founded MedStaff Logistics with a vision to transform healthcare staffing' },
-    { year: '2016', event: 'Expanded to medical logistics and supply chain management services' },
-    { year: '2018', event: 'Reached 100+ healthcare facilities served milestone' },
-    { year: '2020', event: 'Launched 24/7 emergency staffing response during COVID-19 pandemic' },
-    { year: '2022', event: 'Opened regional offices across 5 states' },
-    { year: '2024', event: 'Serving 500+ healthcare facilities with 5000+ staff deployed' },
+      { year: '2014', event: 'Founded SOA Healthcare with a vision to transform healthcare coordination' },
+    { year: '2016', event: 'Expanded to medical logistics and staffing liaison services' },
+    { year: '2018', event: 'Launched consulting division for residency applicants and patient advocacy' },
+    { year: '2020', event: 'Provided critical support during COVID-19 pandemic with 24/7 coordination' },
+    { year: '2022', event: 'Introduced evidence-based literature review services for complex medical cases' },
+    { year: '2024', event: 'Serving 500+ healthcare professionals and numerous patients nationwide' },
   ]
 
   const leadership = [
@@ -64,9 +64,9 @@ export default function AboutPage() {
   return (
     <>
       <Hero
-        title="About MedStaff Logistics"
+        title="About SOA Healthcare"
         subtitle="Our Story"
-        description="Transforming healthcare delivery through innovative staffing and logistics solutions"
+        description="Transforming healthcare delivery through innovative logistics, staffing coordination, and professional consulting"
         backgroundImage="https://images.unsplash.com/photo-1538108149393-fbbd81895907?q=80&w=2728&auto=format&fit=crop"
         compact
       />
@@ -82,9 +82,9 @@ export default function AboutPage() {
                 </div>
                 <h2 className="text-3xl font-bold text-gray-900 mb-4">Our Mission</h2>
                 <p className="text-lg text-gray-700 leading-relaxed">
-                  To provide exceptional healthcare staffing and logistics solutions that empower medical facilities 
-                  to deliver outstanding patient care. We strive to be the most trusted partner in healthcare operations, 
-                  combining reliability, efficiency, and innovation in every service we provide.
+                  To provide exceptional healthcare logistics, staffing coordination, and consulting services that empower 
+                  both healthcare professionals and patients. We strive to be the most trusted partner in healthcare operations 
+                  and professional development, combining reliability, compassion, and innovation in every service we provide.
                 </p>
               </div>
             </div>

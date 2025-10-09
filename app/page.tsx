@@ -92,9 +92,9 @@ export default function Home() {
     <>
       {/* Hero Section */}
       <Hero
-        title="Excellence in Healthcare Logistics & Staffing"
+        title="Excellence in Healthcare Logistics & Consulting"
         subtitle="Your Trusted Partner"
-        description="Delivering reliable healthcare staffing solutions and medical logistics services to hospitals and medical facilities across the nation."
+        description="Delivering comprehensive healthcare logistics, staffing coordination, and professional consulting services to healthcare professionals and patients."
         backgroundImage="https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?q=80&w=2691&auto=format&fit=crop"
         primaryButton={{ text: 'Get Started', href: '/contact' }}
         secondaryButton={{ text: 'Our Services', href: '/services' }}
@@ -170,16 +170,16 @@ export default function Home() {
             </div>
             <div className="animate-slide-in-right">
               <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                Transforming Healthcare Logistics Since 2014
+                Transforming Healthcare Logistics & Consulting Since 2014
               </h2>
               <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-                MedStaff Logistics has been at the forefront of healthcare staffing and logistics solutions, 
-                providing unparalleled service to medical facilities nationwide. Our commitment to excellence 
-                and innovation has made us a trusted partner for over 500 healthcare institutions.
+                SOA Healthcare has been at the forefront of healthcare logistics, staffing coordination, and professional consulting. 
+                Our commitment to excellence and innovation serves both healthcare professionals and patients, providing comprehensive 
+                support from credentialing to patient advocacy.
               </p>
               <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                We understand the critical nature of healthcare operations and provide solutions that ensure 
-                your facility runs smoothly, efficiently, and with the highest standards of care.
+                We understand the critical nature of healthcare operations and personal medical journeys. Our services ensure 
+                smooth coordination, professional development, and patient-centered care solutions.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link href="/about" className="btn-primary inline-flex items-center gap-2">

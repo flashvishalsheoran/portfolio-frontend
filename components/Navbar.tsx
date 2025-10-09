@@ -57,11 +57,11 @@ const Navbar = () => {
             {/* Logo */}
             <Link href="/" className="flex items-center gap-3 group">
               <div className="w-12 h-12 bg-gradient-to-br from-primary-500 to-primary-700 rounded-lg flex items-center justify-center transform group-hover:scale-110 transition-transform">
-                <span className="text-white font-bold text-xl">MS</span>
+                <span className="text-white font-bold text-xl">SOA</span>
               </div>
               <div>
-                <h1 className="text-xl font-bold text-gray-900">MedStaff Logistics</h1>
-                <p className="text-xs text-gray-600">Healthcare Solutions</p>
+                <h1 className="text-xl font-bold text-gray-900">SOA Healthcare</h1>
+                <p className="text-xs text-gray-600">Logistics & Consulting</p>
               </div>
             </Link>
 

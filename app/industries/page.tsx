@@ -12,8 +12,8 @@ import {
 } from 'react-icons/fa'
 
 export const metadata = {
-  title: 'Industries We Serve | MedStaff Logistics',
-  description: 'We serve diverse healthcare sectors including hospitals, clinics, nursing homes, and more.',
+  title: 'Industries We Serve | SOA Healthcare',
+  description: 'We serve diverse healthcare sectors with logistics, staffing coordination, and consulting services.',
 }
 
 export default function IndustriesPage() {

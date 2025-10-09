@@ -13,8 +13,8 @@ import {
 } from 'react-icons/fa'
 
 export const metadata = {
-  title: 'Careers | Join Our Team | MedStaff Logistics',
-  description: 'Join our team of healthcare professionals. Explore career opportunities in healthcare staffing and logistics.',
+  title: 'Careers | Join Our Team | SOA Healthcare',
+  description: 'Join our team of healthcare professionals. Explore career opportunities in healthcare logistics, staffing coordination, and consulting.',
 }
 
 export default function CareersPage() {

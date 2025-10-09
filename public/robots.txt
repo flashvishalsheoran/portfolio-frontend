@@ -2,5 +2,5 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.medstafflogistics.com/sitemap.xml
+Sitemap: https://www.soahealthcare.com/sitemap.xml
 
