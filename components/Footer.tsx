@@ -63,12 +63,6 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link href="/careers" className="text-gray-400 hover:text-primary-400 transition-colors flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 bg-primary-500 rounded-full"></span>
-                  Careers
-                </Link>
-              </li>
-              <li>
                 <Link href="/contact" className="text-gray-400 hover:text-primary-400 transition-colors flex items-center gap-2">
                   <span className="w-1.5 h-1.5 bg-primary-500 rounded-full"></span>
                   Contact Us
@@ -114,19 +108,19 @@ const Footer = () => {
               </li>
               <li className="flex items-center gap-3 text-gray-400">
                 <FaPhone className="text-primary-500 flex-shrink-0" />
-                <a href="tel:+1234567890" className="hover:text-primary-400 transition-colors text-sm">
-                  +1 (234) 567-890
+                <a href="tel:+18575656557" className="hover:text-primary-400 transition-colors text-sm">
+                  +1 (857) 565-6557
                 </a>
               </li>
               <li className="flex items-center gap-3 text-gray-400">
                 <FaEnvelope className="text-primary-500 flex-shrink-0" />
-                <a href="mailto:info@medstafflogistics.com" className="hover:text-primary-400 transition-colors text-sm">
-                  info@medstafflogistics.com
+                <a href="mailto:soahealthcare24@gmail.com" className="hover:text-primary-400 transition-colors text-sm">
+                  soahealthcare24@gmail.com
                 </a>
               </li>
               <li className="flex items-center gap-3 text-gray-400">
                 <FaWhatsapp className="text-primary-500 flex-shrink-0" />
-                <a href="https://wa.me/1234567890" className="hover:text-primary-400 transition-colors text-sm">
+                <a href="https://wa.me/18575656557" className="hover:text-primary-400 transition-colors text-sm">
                   WhatsApp Support
                 </a>
               </li>

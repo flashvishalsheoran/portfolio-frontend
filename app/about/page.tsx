@@ -31,15 +31,6 @@ export default function AboutPage() {
     },
   ]
 
-  const milestones = [
-      { year: '2014', event: 'Founded SOA Healthcare with a vision to transform healthcare coordination' },
-    { year: '2016', event: 'Expanded to medical logistics and staffing liaison services' },
-    { year: '2018', event: 'Launched consulting division for residency applicants and patient advocacy' },
-    { year: '2020', event: 'Provided critical support during COVID-19 pandemic with 24/7 coordination' },
-    { year: '2022', event: 'Introduced evidence-based literature review services for complex medical cases' },
-    { year: '2024', event: 'Serving 500+ healthcare professionals and numerous patients nationwide' },
-  ]
-
   const leadership = [
     {
       name: 'Dr. James Mitchell',
@@ -128,41 +119,6 @@ export default function AboutPage() {
                 <p className="text-gray-600">{value.description}</p>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Our Journey Section */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="section-title">Our Journey</h2>
-            <p className="section-subtitle">
-              A decade of growth, innovation, and impact in healthcare
-            </p>
-          </div>
-          <div className="max-w-4xl mx-auto">
-            <div className="space-y-8">
-              {milestones.map((milestone, index) => (
-                <div
-                  key={index}
-                  className="flex gap-6 items-start animate-slide-up"
-                  style={{ animationDelay: `${index * 100}ms` }}
-                >
-                  <div className="flex-shrink-0 w-24 text-right">
-                    <span className="text-2xl font-bold text-primary-600">{milestone.year}</span>
-                  </div>
-                  <div className="flex-shrink-0 w-4 h-4 bg-primary-600 rounded-full mt-2 relative">
-                    {index !== milestones.length - 1 && (
-                      <div className="absolute top-4 left-1/2 -translate-x-1/2 w-0.5 h-16 bg-primary-300" />
-                    )}
-                  </div>
-                  <div className="flex-grow pb-8">
-                    <p className="text-lg text-gray-700 leading-relaxed">{milestone.event}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
           </div>
         </div>
       </section>

@@ -52,7 +52,7 @@ const Hero = ({
       }`}>
         <div className="max-w-4xl mx-auto text-center">
           {subtitle && (
-            <p className="text-primary-200 font-semibold mb-4 animate-fade-in">
+            <p className="text-xl md:text-2xl text-primary-200 font-bold mb-6 animate-fade-in tracking-wide uppercase">
               {subtitle}
             </p>
           )}

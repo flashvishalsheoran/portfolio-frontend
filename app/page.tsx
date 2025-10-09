@@ -4,7 +4,7 @@ import StatsSection from '@/components/StatsSection'
 import TestimonialCard from '@/components/TestimonialCard'
 import Link from 'next/link'
 import Image from 'next/image'
-import { FaUserMd, FaTruck, FaHospital, FaClock, FaChartLine, FaShieldAlt, FaCheckCircle, FaArrowRight } from 'react-icons/fa'
+import { FaUserMd, FaTruck, FaPlane, FaBoxes, FaGraduationCap, FaBookMedical, FaHandsHelping, FaHospital, FaClock, FaChartLine, FaShieldAlt, FaCheckCircle, FaArrowRight } from 'react-icons/fa'
 
 export default function Home() {
   const stats = [
@@ -15,29 +15,67 @@ export default function Home() {
   ]
 
   const services = [
+    // Logistics Services
     {
       icon: <FaUserMd />,
-      title: 'Healthcare Staffing',
-      description: 'Professional medical staff recruitment including nurses, physicians, and allied health professionals.',
-      features: ['Registered Nurses', 'Physicians & Specialists', 'Allied Health Professionals', 'Administrative Staff']
+      title: 'Healthcare Staffing Liaison',
+      description: 'Bridging gaps between healthcare facilities and locum tenens providers.',
+      features: [
+        'Reliable network of clinical professionals',
+        'Credentialing and onboarding management',
+        'Streamlined placement process'
+      ]
     },
     {
-      icon: <FaTruck />,
-      title: 'Medical Logistics',
-      description: 'Efficient medical supply chain management and equipment delivery services.',
-      features: ['Equipment Transportation', 'Temperature-Controlled Delivery', 'Real-time Tracking', 'Inventory Management']
+      icon: <FaPlane />,
+      title: 'Travel & Accommodation Coordination',
+      description: 'Comprehensive travel and lodging management for healthcare professionals.',
+      features: [
+        'Negotiated corporate rates',
+        '24/7 concierge-style support',
+        'Stress-free transitions'
+      ]
     },
     {
-      icon: <FaClock />,
-      title: 'Emergency Staffing',
-      description: '24/7 emergency healthcare staffing solutions for urgent requirements.',
-      features: ['24/7 Availability', 'Rapid Deployment', 'Pre-screened Professionals', 'Crisis Management']
+      icon: <FaBoxes />,
+      title: 'Research Procurement & Supply Chain',
+      description: 'Coordinating procurement and delivery of Research Use Only (RUO) products.',
+      features: [
+        'Vendor relations management',
+        'Inventory tracking',
+        'Real-time shipment updates'
+      ]
+    },
+    // Consulting Services
+    {
+      icon: <FaGraduationCap />,
+      title: 'Residency Applicant Development',
+      description: 'Tailored professional development for international and U.S. medical graduates.',
+      features: [
+        'Personal statement & interview coaching',
+        'CV/resume optimization',
+        'Mentorship pairings'
+      ]
     },
     {
-      icon: <FaChartLine />,
-      title: 'Supply Chain Management',
-      description: 'Comprehensive medical supply chain optimization and management services.',
-      features: ['Demand Forecasting', 'Vendor Management', 'Cost Optimization', 'Quality Assurance']
+      icon: <FaBookMedical />,
+      title: 'Evidence-Based Literature Reviews',
+      description: 'In-depth literature research for patients with rare or complex conditions.',
+      features: [
+        'Peer-reviewed reports',
+        'Care provider discussion support',
+        'Publication assistance'
+      ]
+    },
+    {
+      icon: <FaHandsHelping />,
+      title: 'Healthcare Accessibility Consulting',
+      description: 'Navigation support for patients with complex healthcare needs.',
+      features: [
+        'Personalized care roadmaps',
+        'Provider matching & insurance coordination',
+        'Services for underserved populations'
+      ]
     },
   ]
 
@@ -46,21 +84,21 @@ export default function Home() {
       name: 'Dr. Sarah Johnson',
       role: 'Medical Director',
       company: 'Central City Hospital',
-      content: 'MedStaff Logistics has been instrumental in helping us maintain optimal staffing levels. Their professionalism and quick response time are unmatched.',
+      content: 'SOA Healthcare has been instrumental in coordinating our staffing needs. Their professionalism and quick response time are unmatched.',
       rating: 5,
     },
     {
-      name: 'Michael Chen',
-      role: 'Operations Manager',
-      company: 'Regional Medical Center',
-      content: 'The logistics solutions provided have streamlined our supply chain significantly. We have seen a 30% reduction in costs while improving delivery times.',
+      name: 'Dr. Michael Chen',
+      role: 'Residency Program Director',
+      company: 'University Medical Center',
+      content: 'The residency development consulting has been invaluable for our international medical graduates. Their personalized coaching truly makes a difference.',
       rating: 5,
     },
     {
       name: 'Emily Rodriguez',
-      role: 'HR Director',
-      company: 'Metro Health Network',
-      content: 'Outstanding service! The quality of healthcare professionals they provide is consistently excellent. They truly understand our needs.',
+      role: 'Patient Advocate',
+      company: 'Healthcare Access Foundation',
+      content: 'Outstanding service! The literature reviews and accessibility consulting have helped numerous patients navigate complex medical situations with confidence.',
       rating: 5,
     },
   ]
@@ -69,22 +107,22 @@ export default function Home() {
     {
       icon: <FaShieldAlt />,
       title: 'Trusted & Reliable',
-      description: 'Over 10 years of proven excellence in healthcare logistics and staffing'
+      description: 'Over 10 years of proven excellence in healthcare logistics and consulting'
     },
     {
       icon: <FaCheckCircle />,
       title: 'Quality Assured',
-      description: 'Rigorous screening and certification processes for all professionals'
+      description: 'Evidence-based approaches and rigorous professional standards'
     },
     {
       icon: <FaClock />,
       title: '24/7 Support',
-      description: 'Round-the-clock availability for emergency staffing and logistics needs'
+      description: 'Round-the-clock availability for logistics coordination and guidance'
     },
     {
       icon: <FaChartLine />,
-      title: 'Cost Effective',
-      description: 'Optimized solutions that reduce costs while maintaining quality'
+      title: 'Personalized Solutions',
+      description: 'Tailored services that meet your unique healthcare needs'
     },
   ]
 
@@ -109,10 +147,10 @@ export default function Home() {
           <div className="text-center mb-16">
             <h2 className="section-title">Our Core Services</h2>
             <p className="section-subtitle">
-              Comprehensive healthcare logistics and staffing solutions tailored to your needs
+              Comprehensive logistics and consulting solutions for healthcare professionals and patients
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
               <div key={index} className="animate-slide-up h-full" style={{ animationDelay: `${index * 100}ms` }}>
                 <ServiceCard {...service} />
@@ -131,9 +169,9 @@ export default function Home() {
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="section-title">Why Choose MedStaff Logistics</h2>
+            <h2 className="section-title">Why Choose SOA Healthcare</h2>
             <p className="section-subtitle">
-              We combine expertise, reliability, and innovation to deliver exceptional healthcare solutions
+              We combine expertise, compassion, and innovation to deliver exceptional healthcare solutions
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -217,17 +255,17 @@ export default function Home() {
       <section className="py-20 gradient-bg">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 animate-slide-up">
-            Ready to Transform Your Healthcare Operations?
+            Ready to Transform Your Healthcare Journey?
           </h2>
           <p className="text-xl text-gray-200 mb-8 max-w-3xl mx-auto animate-slide-up animation-delay-200">
-            Let's discuss how we can help optimize your staffing and logistics needs
+            Let's discuss how we can support your healthcare logistics or consulting needs
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-slide-up animation-delay-400">
             <Link href="/contact" className="btn-primary bg-white text-primary-600 hover:bg-gray-100">
-              Request a Consultation
+              Get an Appointment
             </Link>
-            <Link href="/careers" className="btn-outline">
-              Join Our Team
+            <Link href="/services" className="btn-outline">
+              View Our Services
             </Link>
           </div>
         </div>

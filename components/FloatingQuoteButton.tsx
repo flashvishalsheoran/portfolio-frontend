@@ -32,10 +32,10 @@ const FloatingQuoteButton = () => {
               onClick={() => setIsOpen(false)}
               className="block w-full text-center bg-primary-600 hover:bg-primary-700 text-white font-semibold py-3 px-6 rounded-lg transition-all transform hover:scale-105"
             >
-              Request a Quote
+              Get an Appointment
             </Link>
             <a
-              href="https://wa.me/1234567890"
+              href="https://wa.me/18575656557"
               target="_blank"
               rel="noopener noreferrer"
               className="block w-full text-center bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-6 rounded-lg transition-all transform hover:scale-105"
@@ -43,7 +43,7 @@ const FloatingQuoteButton = () => {
               Chat on WhatsApp
             </a>
             <a
-              href="tel:+1234567890"
+              href="tel:+18575656557"
               className="block w-full text-center bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-6 rounded-lg transition-all transform hover:scale-105"
             >
               Call Us Now

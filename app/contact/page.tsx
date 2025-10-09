@@ -7,10 +7,8 @@ import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaWhatsapp, FaPaperPlane } from 'r
 export default function ContactPage() {
   const [formData, setFormData] = useState({
     name: '',
-    email: '',
     phone: '',
-    company: '',
-    service: '',
+    purpose: '',
     message: '',
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -27,38 +25,68 @@ export default function ContactPage() {
     e.preventDefault()
     setIsSubmitting(true)
     
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false)
-      setSubmitStatus('success')
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        company: '',
-        service: '',
-        message: '',
+    try {
+      // Send appointment request to API
+      const response = await fetch('/api/appointment', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
       })
+
+      const data = await response.json()
+
+      if (response.ok && data.success) {
+        // Success - show success message
+        setSubmitStatus('success')
+        setFormData({
+          name: '',
+          phone: '',
+          purpose: '',
+          message: '',
+        })
+        
+        // Reset success message after 5 seconds
+        setTimeout(() => {
+          setSubmitStatus('idle')
+        }, 5000)
+      } else {
+        // Error from API
+        setSubmitStatus('error')
+        console.error('Appointment booking failed:', data.error)
+        
+        // Reset error message after 5 seconds
+        setTimeout(() => {
+          setSubmitStatus('idle')
+        }, 5000)
+      }
+    } catch (error) {
+      // Network or other error
+      console.error('Error submitting appointment:', error)
+      setSubmitStatus('error')
       
-      // Reset success message after 5 seconds
+      // Reset error message after 5 seconds
       setTimeout(() => {
         setSubmitStatus('idle')
       }, 5000)
-    }, 1500)
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   const contactInfo = [
     {
       icon: <FaPhone />,
       title: 'Phone',
-      content: '+1 (234) 567-890',
-      link: 'tel:+1234567890',
+      content: '+1 (857) 565-6557',
+      link: 'tel:+18575656557',
     },
     {
       icon: <FaEnvelope />,
       title: 'Email',
-      content: 'info@medstafflogistics.com',
-      link: 'mailto:info@medstafflogistics.com',
+      content: 'soahealthcare24@gmail.com',
+      link: 'mailto:soahealthcare24@gmail.com',
     },
     {
       icon: <FaMapMarkerAlt />,
@@ -70,16 +98,16 @@ export default function ContactPage() {
       icon: <FaWhatsapp />,
       title: 'WhatsApp',
       content: 'Chat with us',
-      link: 'https://wa.me/1234567890',
+      link: 'https://wa.me/18575656557',
     },
   ]
 
   return (
     <>
       <Hero
-        title="Get In Touch"
+        title="Book Your Appointment"
         subtitle="Contact Us"
-        description="Have questions? We're here to help. Reach out to us and we'll respond as soon as possible."
+        description="Schedule a one-on-one consultation with our healthcare experts. We're here to support your journey."
         backgroundImage="https://images.unsplash.com/photo-1423666639041-f56000c27a9a?q=80&w=2674&auto=format&fit=crop"
         compact
       />
@@ -115,118 +143,94 @@ export default function ContactPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="section-title">Send Us a Message</h2>
+              <h2 className="section-title">Book Your Appointment</h2>
               <p className="section-subtitle">
-                Fill out the form below and we'll get back to you within 24 hours
+                Fill out the form below to schedule a one-on-one consultation
               </p>
             </div>
 
             <div className="card animate-slide-up">
               <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <label htmlFor="name" className="block text-sm font-semibold text-gray-700 mb-2">
-                      Full Name *
-                    </label>
-                    <input
-                      type="text"
-                      id="name"
-                      name="name"
-                      required
-                      value={formData.name}
-                      onChange={handleChange}
-                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary-500 focus:ring-2 focus:ring-primary-200 outline-none transition-all"
-                      placeholder="John Doe"
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-2">
-                      Email Address *
-                    </label>
-                    <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      required
-                      value={formData.email}
-                      onChange={handleChange}
-                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary-500 focus:ring-2 focus:ring-primary-200 outline-none transition-all"
-                      placeholder="john@example.com"
-                    />
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <label htmlFor="phone" className="block text-sm font-semibold text-gray-700 mb-2">
-                      Phone Number
-                    </label>
-                    <input
-                      type="tel"
-                      id="phone"
-                      name="phone"
-                      value={formData.phone}
-                      onChange={handleChange}
-                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary-500 focus:ring-2 focus:ring-primary-200 outline-none transition-all"
-                      placeholder="+1 (234) 567-890"
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="company" className="block text-sm font-semibold text-gray-700 mb-2">
-                      Company/Facility Name
-                    </label>
-                    <input
-                      type="text"
-                      id="company"
-                      name="company"
-                      value={formData.company}
-                      onChange={handleChange}
-                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary-500 focus:ring-2 focus:ring-primary-200 outline-none transition-all"
-                      placeholder="Your Hospital/Clinic"
-                    />
-                  </div>
+                <div>
+                  <label htmlFor="name" className="block text-sm font-semibold text-gray-700 mb-2">
+                    Full Name *
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    required
+                    value={formData.name}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary-500 focus:ring-2 focus:ring-primary-200 outline-none transition-all"
+                    placeholder="Enter your full name"
+                  />
                 </div>
 
                 <div>
-                  <label htmlFor="service" className="block text-sm font-semibold text-gray-700 mb-2">
-                    Service Interested In *
+                  <label htmlFor="phone" className="block text-sm font-semibold text-gray-700 mb-2">
+                    Phone Number *
+                  </label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    required
+                    value={formData.phone}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary-500 focus:ring-2 focus:ring-primary-200 outline-none transition-all"
+                    placeholder="+1 (857) 565-6557"
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="purpose" className="block text-sm font-semibold text-gray-700 mb-2">
+                    Purpose of One-on-One Consultation *
                   </label>
                   <select
-                    id="service"
-                    name="service"
+                    id="purpose"
+                    name="purpose"
                     required
-                    value={formData.service}
+                    value={formData.purpose}
                     onChange={handleChange}
                     className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary-500 focus:ring-2 focus:ring-primary-200 outline-none transition-all"
                   >
-                    <option value="">Select a service</option>
-                    <option value="healthcare-staffing">Healthcare Staffing</option>
-                    <option value="medical-logistics">Medical Logistics</option>
-                    <option value="emergency-staffing">Emergency Staffing</option>
-                    <option value="supply-chain">Supply Chain Management</option>
+                    <option value="">Select consultation purpose</option>
+                    <option value="healthcare-staffing-liaison">Healthcare Staffing Liaison</option>
+                    <option value="travel-accommodation">Travel & Accommodation Coordination</option>
+                    <option value="research-procurement">Research Procurement & Supply Chain</option>
+                    <option value="residency-development">Residency Applicant Development</option>
+                    <option value="literature-review">Evidence-Based Medical Literature Review</option>
+                    <option value="healthcare-accessibility">Healthcare Accessibility Consulting</option>
+                    <option value="general-inquiry">General Inquiry</option>
                     <option value="other">Other</option>
                   </select>
                 </div>
 
                 <div>
                   <label htmlFor="message" className="block text-sm font-semibold text-gray-700 mb-2">
-                    Message *
+                    Additional Information
                   </label>
                   <textarea
                     id="message"
                     name="message"
-                    required
                     value={formData.message}
                     onChange={handleChange}
                     rows={6}
                     className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary-500 focus:ring-2 focus:ring-primary-200 outline-none transition-all resize-none"
-                    placeholder="Tell us about your needs..."
+                    placeholder="Please provide any additional details about your consultation needs..."
                   />
                 </div>
 
                 {submitStatus === 'success' && (
                   <div className="bg-green-50 border border-green-200 text-green-700 px-4 py-3 rounded-lg">
-                    Thank you for your message! We'll get back to you within 24 hours.
+                    ✅ Thank you for booking! Your appointment request has been received. We'll contact you within 24 hours to confirm your consultation.
+                  </div>
+                )}
+
+                {submitStatus === 'error' && (
+                  <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg">
+                    ❌ Sorry, there was an error submitting your appointment. Please try again or call us directly at +1 (857) 565-6557.
                   </div>
                 )}
 
@@ -238,12 +242,12 @@ export default function ContactPage() {
                   {isSubmitting ? (
                     <>
                       <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
-                      Sending...
+                      Booking...
                     </>
                   ) : (
                     <>
                       <FaPaperPlane />
-                      Send Message
+                      Book Appointment
                     </>
                   )}
                 </button>
@@ -286,13 +290,13 @@ export default function ContactPage() {
             Need Immediate Assistance?
           </h2>
           <p className="text-xl text-gray-200 mb-8 max-w-3xl mx-auto">
-            Our team is available 24/7 for emergency staffing and logistics needs
+            Our team is available 24/7 for consultation and support
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="tel:+1234567890" className="btn-primary bg-white text-primary-600 hover:bg-gray-100">
-              Call Now: +1 (234) 567-890
+            <a href="tel:+18575656557" className="btn-primary bg-white text-primary-600 hover:bg-gray-100">
+              Call Now: +1 (857) 565-6557
             </a>
-            <a href="https://wa.me/1234567890" className="btn-outline" target="_blank" rel="noopener noreferrer">
+            <a href="https://wa.me/18575656557" className="btn-outline" target="_blank" rel="noopener noreferrer">
               Chat on WhatsApp
             </a>
           </div>

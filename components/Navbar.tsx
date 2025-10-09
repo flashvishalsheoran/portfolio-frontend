@@ -23,8 +23,7 @@ const Navbar = () => {
     { name: 'About Us', path: '/about' },
     { name: 'Services', path: '/services' },
     { name: 'Industries', path: '/industries' },
-    { name: 'Careers', path: '/careers' },
-    { name: 'Contact', path: '/contact' },
+    { name: 'Contact Us', path: '/contact' },
   ]
 
   return (
@@ -33,13 +32,13 @@ const Navbar = () => {
       <div className="bg-primary-700 text-white py-2 hidden md:block">
         <div className="container mx-auto px-4 flex justify-between items-center text-sm">
           <div className="flex items-center gap-6">
-            <a href="tel:+1234567890" className="flex items-center gap-2 hover:text-primary-200 transition-colors">
+            <a href="tel:+18575656557" className="flex items-center gap-2 hover:text-primary-200 transition-colors">
               <FaPhone className="text-xs" />
-              <span>+1 (234) 567-890</span>
+              <span>+1 (857) 565-6557</span>
             </a>
-            <a href="mailto:info@medstafflogistics.com" className="flex items-center gap-2 hover:text-primary-200 transition-colors">
+            <a href="mailto:soahealthcare24@gmail.com" className="flex items-center gap-2 hover:text-primary-200 transition-colors">
               <FaEnvelope className="text-xs" />
-              <span>info@medstafflogistics.com</span>
+              <span>soahealthcare24@gmail.com</span>
             </a>
           </div>
           <div className="text-sm">
@@ -84,7 +83,7 @@ const Navbar = () => {
                 </Link>
               ))}
               <Link href="/contact" className="btn-primary">
-                Get Started
+                Get an Appointment
               </Link>
             </div>
 
@@ -119,7 +118,7 @@ const Navbar = () => {
                 onClick={() => setIsOpen(false)}
                 className="block mt-4 text-center btn-primary"
               >
-                Get Started
+                Get an Appointment
               </Link>
             </div>
           )}
