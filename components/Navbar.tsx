@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { FaBars, FaTimes, FaPhone, FaEnvelope } from 'react-icons/fa'
 
@@ -36,9 +37,9 @@ const Navbar = () => {
               <FaPhone className="text-xs" />
               <span>+1 (857) 565-6557</span>
             </a>
-            <a href="mailto:soahealthcare24@gmail.com" className="flex items-center gap-2 hover:text-primary-200 transition-colors">
+            <a href="mailto:sahmad5@soahealthcare.net" className="flex items-center gap-2 hover:text-primary-200 transition-colors">
               <FaEnvelope className="text-xs" />
-              <span>soahealthcare24@gmail.com</span>
+              <span>sahmad5@soahealthcare.net</span>
             </a>
           </div>
           <div className="text-sm">
@@ -55,8 +56,13 @@ const Navbar = () => {
           <div className="flex justify-between items-center py-4">
             {/* Logo */}
             <Link href="/" className="flex items-center gap-3 group">
-              <div className="w-12 h-12 bg-gradient-to-br from-primary-500 to-primary-700 rounded-lg flex items-center justify-center transform group-hover:scale-110 transition-transform">
-                <span className="text-white font-bold text-xl">SOA</span>
+              <div className="w-12 h-12 relative transform group-hover:scale-110 transition-transform">
+                <Image
+                  src="/soa-healthcare-logo.jpg"
+                  alt="SOA Healthcare Logo"
+                  fill
+                  className="object-contain rounded-lg"
+                />
               </div>
               <div>
                 <h1 className="text-xl font-bold text-gray-900">SOA Healthcare</h1>

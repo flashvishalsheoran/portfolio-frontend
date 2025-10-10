@@ -1,91 +1,85 @@
 # SOA Healthcare - Backend Services
 
-This directory contains backend services and utilities for the SOA Healthcare application.
+This directory contains backend services for the SOA Healthcare appointment booking system.
 
 ## Structure
 
 ```
 backend/
 ├── services/
-│   └── emailService.ts    # Appointment logging service
+│   └── emailService.ts    # Mailjet email service
 └── types/
     └── appointment.ts     # TypeScript type definitions
 ```
 
-## Appointment Service
+## Email Service - Mailjet Integration
 
-### Current Implementation: Console Logging
+### Configuration
 
-The appointment service currently **logs all appointment details to the server console**. This allows you to:
-- ✅ See all appointment requests immediately
-- ✅ Test the form without email configuration
-- ✅ Integrate with any email service later
+**Email Provider:** Mailjet (https://www.mailjet.com)
 
-### How It Works
+**Required:** Two API credentials from Mailjet:
+1. ✅ API Key: `25114bb5dec46344ac97c67515962f22`
+2. ⚠️ Secret Key: Get from https://app.mailjet.com/account/apikeys
 
-When a user submits an appointment:
+### Setup
 
-1. **Form data validated** in API endpoint
-2. **Details logged to console** with beautiful formatting
-3. **Success response** sent to user
-4. **You see the appointment** in your terminal/server logs
+1. **Get Secret Key from Mailjet:**
+   - Visit: https://app.mailjet.com/account/apikeys
+   - Find your Secret Key
+   - Copy it
 
-### Console Output Example
+2. **Update `.env.local`:**
+   ```env
+   MAILJET_API_KEY=25114bb5dec46344ac97c67515962f22
+   MAILJET_SECRET_KEY=your_secret_key_here
+   ```
 
-```
-================================================================================
-📧 NEW APPOINTMENT REQUEST - SOA HEALTHCARE
-================================================================================
+3. **Restart Server:**
+   ```bash
+   npm run dev
+   ```
 
-👤 PATIENT INFORMATION:
-   Name: John Doe
-   Phone: +1 (857) 565-6557
-   Purpose: Residency Applicant Development
+### Email Features
 
-💬 MESSAGE:
-   I need help with my ERAS application for the 2025 match
+✅ **Concise & Clean** - Only essential information
+✅ **Professional Design** - SOA Healthcare branding
+✅ **Mobile Responsive** - Works on all devices
+✅ **Clickable Phone** - Direct call from email
+✅ **Fast Delivery** - Mailjet's reliable infrastructure
 
-⏰ TIMESTAMP:
-   Thursday, October 9, 2025 at 11:30:00 PM Eastern Daylight Time
+### Email Content (Minimal)
 
-📩 EMAIL DESTINATION:
-   To: soahealthcare24@gmail.com
+**Subject:** `New Appointment: [Patient Name]`
 
-================================================================================
-✅ Appointment logged successfully!
-⚠️  NOTE: Email service not configured - details logged to console
-================================================================================
-```
+**Body:**
+- Patient Name
+- Phone Number (clickable)
+- Consultation Purpose
+- Message (if provided)
+- Timestamp
+- Action reminder (24 hours)
 
 ---
 
-## API Endpoints
+## API Endpoint
 
 ### POST /api/appointment
 
-Submit a new appointment request.
+**URL:** `/api/appointment`  
+**Method:** `POST`
 
-**Endpoint:** `/api/appointment`  
-**Method:** `POST`  
-**Content-Type:** `application/json`
-
-**Request Body:**
+**Request:**
 ```json
 {
   "name": "John Doe",
   "phone": "+1 (857) 565-6557",
   "purpose": "residency-development",
-  "message": "I need help with my ERAS application"
+  "message": "Optional message"
 }
 ```
 
-**Validation Rules:**
-- `name`: Required, string
-- `phone`: Required, valid phone format
-- `purpose`: Required, string
-- `message`: Optional, string
-
-**Success Response (200):**
+**Response (Success):**
 ```json
 {
   "success": true,
@@ -93,148 +87,45 @@ Submit a new appointment request.
 }
 ```
 
-**Error Responses:**
-
-**400 Bad Request:**
+**Response (Error):**
 ```json
 {
-  "error": "Missing required fields. Please provide name, phone, and purpose."
-}
-```
-
-**500 Internal Server Error:**
-```json
-{
-  "error": "Failed to send appointment request."
+  "error": "Error description"
 }
 ```
 
 ---
 
-## Integrating Email Service (Future)
+## Mailjet Free Tier
 
-When you're ready to send actual emails, you can integrate any service:
+- **6,000 emails/month** (200/day)
+- **Email tracking** included
+- **99% deliverability**
+- **Professional infrastructure**
 
-### Option 1: Resend (Recommended)
-```bash
-npm install resend
-```
-
-```typescript
-// In emailService.ts
-import { Resend } from 'resend'
-const resend = new Resend(process.env.RESEND_API_KEY)
-
-await resend.emails.send({
-  from: 'SOA Healthcare <onboarding@resend.dev>',
-  to: ['soahealthcare24@gmail.com'],
-  subject: 'New Appointment',
-  html: formatEmailContent(data).html
-})
-```
-
-### Option 2: SendGrid
-```bash
-npm install @sendgrid/mail
-```
-
-### Option 3: AWS SES
-```bash
-npm install @aws-sdk/client-ses
-```
+Perfect for appointment bookings!
 
 ---
 
-## Development
+## Troubleshooting
 
-### View Appointments
-
-All appointment requests appear in your **terminal/console** where the dev server is running.
-
-**To see appointments:**
-1. Keep terminal visible
-2. Submit test appointments
-3. Watch console output
-
-### Testing
-
-1. **Start Dev Server:**
-   ```bash
-   npm run dev
-   ```
-
-2. **Test Form:**
-   - Visit: http://localhost:3000/contact
-   - Fill out appointment form
-   - Click "Book Appointment"
-
-3. **Check Console:**
-   - Look at terminal output
-   - See formatted appointment details
-   - Verify all data is captured correctly
-
----
-
-## Security
-
-- ✅ Input validation on all fields
-- ✅ Phone format validation
-- ✅ TypeScript type safety
-- ✅ Error handling
-- ✅ No API keys needed (for current implementation)
+| Issue | Solution |
+|-------|----------|
+| "Authentication failed" | Add Secret Key to `.env.local` |
+| Email not received | Check spam folder |
+| "Invalid credentials" | Verify both API Key and Secret Key |
+| Server error | Check console logs |
 
 ---
 
 ## Production Deployment
 
-The current implementation works in production without any configuration:
-
-1. **Deploy to Vercel/Netlify**
-2. **Appointments logged to server logs**
-3. **Check deployment logs** to see appointments
-
-### Viewing Appointments in Production:
-
-**Vercel:**
-- Dashboard → Your Project → Functions
-- View real-time logs
-- See appointment details
-
-**Netlify:**
-- Functions tab
-- View function logs
-
----
-
-## Type Definitions
-
-See `/backend/types/appointment.ts`:
-
-```typescript
-export interface AppointmentData {
-  name: string
-  phone: string
-  purpose: string
-  message: string
-}
+**Add to Vercel/Netlify:**
+```
+MAILJET_API_KEY=25114bb5dec46344ac97c67515962f22
+MAILJET_SECRET_KEY=your_secret_key
 ```
 
 ---
 
-## Monitoring
-
-### Development:
-- ✅ Terminal console shows all appointments
-- ✅ Formatted output for easy reading
-- ✅ Timestamps included
-
-### Production:
-- ✅ Vercel/Netlify function logs
-- ✅ Real-time monitoring
-- ✅ Export logs if needed
-
----
-
-**Last Updated:** October 2025  
-**Status:** ✅ Production Ready (Console Logging)  
-**Email Service:** Not configured (logs to console)
+**See `MAILJET_SETUP.md` for detailed setup instructions.**

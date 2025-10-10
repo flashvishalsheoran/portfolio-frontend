@@ -85,14 +85,14 @@ export default function ContactPage() {
     {
       icon: <FaEnvelope />,
       title: 'Email',
-      content: 'soahealthcare24@gmail.com',
-      link: 'mailto:soahealthcare24@gmail.com',
+      content: 'sahmad5@soahealthcare.net',
+      link: 'mailto:sahmad5@soahealthcare.net',
     },
     {
       icon: <FaMapMarkerAlt />,
       title: 'Address',
-      content: '123 Medical Plaza, Healthcare District, New York, NY 10001',
-      link: 'https://maps.google.com',
+      content: '303 Parker St, Newton Centre, MA 02459',
+      link: 'https://maps.google.com/?q=303+Parker+St,+Newton+Centre,+MA+02459',
     },
     {
       icon: <FaWhatsapp />,
@@ -269,7 +269,7 @@ export default function ContactPage() {
           <div className="bg-gradient-bg-light rounded-2xl overflow-hidden shadow-xl">
             <div className="aspect-[16/9] md:aspect-[21/9] relative">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d193595.15830869428!2d-74.119763973046!3d40.69766374874431!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2s!4v1234567890123!5m2!1sen!2s"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2947.9!2d-71.2097!3d42.3297!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e370a123456789%3A0x123456789abcdef!2s303%20Parker%20St%2C%20Newton%20Centre%2C%20MA%2002459!5e0!3m2!1sen!2sus!4v1234567890123!5m2!1sen!2sus"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}

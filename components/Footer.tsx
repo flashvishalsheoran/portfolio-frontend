@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram, FaPhone, FaEnvelope, FaMapMarkerAlt, FaWhatsapp } from 'react-icons/fa'
 
 const Footer = () => {
@@ -13,8 +14,13 @@ const Footer = () => {
           {/* Company Info */}
           <div className="space-y-4">
             <div className="flex items-center gap-3">
-              <div className="w-12 h-12 bg-gradient-to-br from-primary-500 to-primary-700 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-xl">SOA</span>
+              <div className="w-12 h-12 relative">
+                <Image
+                  src="/soa-healthcare-logo.jpg"
+                  alt="SOA Healthcare Logo"
+                  fill
+                  className="object-contain rounded-lg"
+                />
               </div>
               <div>
                 <h3 className="text-xl font-bold">SOA Healthcare</h3>
@@ -104,7 +110,7 @@ const Footer = () => {
             <ul className="space-y-4">
               <li className="flex items-start gap-3 text-gray-400">
                 <FaMapMarkerAlt className="text-primary-500 mt-1 flex-shrink-0" />
-                <span className="text-sm">123 Medical Plaza, Healthcare District, New York, NY 10001</span>
+                <span className="text-sm">303 Parker St, Newton Centre, MA 02459</span>
               </li>
               <li className="flex items-center gap-3 text-gray-400">
                 <FaPhone className="text-primary-500 flex-shrink-0" />
@@ -114,8 +120,8 @@ const Footer = () => {
               </li>
               <li className="flex items-center gap-3 text-gray-400">
                 <FaEnvelope className="text-primary-500 flex-shrink-0" />
-                <a href="mailto:soahealthcare24@gmail.com" className="hover:text-primary-400 transition-colors text-sm">
-                  soahealthcare24@gmail.com
+                <a href="mailto:sahmad5@soahealthcare.net" className="hover:text-primary-400 transition-colors text-sm">
+                  sahmad5@soahealthcare.net
                 </a>
               </li>
               <li className="flex items-center gap-3 text-gray-400">
