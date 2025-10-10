@@ -56,7 +56,7 @@ const Navbar = () => {
           <div className="flex justify-between items-center py-4">
             {/* Logo */}
             <Link href="/" className="flex items-center gap-3 group">
-              <div className="w-12 h-12 relative transform group-hover:scale-110 transition-transform">
+              <div className="w-20 h-20 relative transform group-hover:scale-110 transition-transform">
                 <Image
                   src="/soa-healthcare-logo.jpg"
                   alt="SOA Healthcare Logo"

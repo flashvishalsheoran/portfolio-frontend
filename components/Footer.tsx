@@ -14,7 +14,7 @@ const Footer = () => {
           {/* Company Info */}
           <div className="space-y-4">
             <div className="flex items-center gap-3">
-              <div className="w-12 h-12 relative">
+              <div className="w-20 h-20 relative">
                 <Image
                   src="/soa-healthcare-logo.jpg"
                   alt="SOA Healthcare Logo"
